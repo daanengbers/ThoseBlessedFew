@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://df0w2r34dp1ly"]
+
+[ext_resource type="Script" path="res://Script/globalsettings.gd" id="1_y6v35"]
+[ext_resource type="AudioStream" uid="uid://j3kb867cog2p" path="res://sounds/Sea_of_Souls_1_fixed_2.wav" id="2_1dst7"]
+[ext_resource type="AudioStream" uid="uid://bwidf3364l2j" path="res://sounds/Tower_of_Doom_1.wav" id="3_47act"]
+
+[node name="Globalsettings" type="Node"]
+script = ExtResource("1_y6v35")
+
+[node name="Normalmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1dst7")
+volume_db = -10.0
+
+[node name="Bossmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_47act")
+volume_db = -10.0

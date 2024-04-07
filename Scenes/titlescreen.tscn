@@ -1,0 +1,212 @@
+[gd_scene load_steps=24 format=3 uid="uid://dw514lhixokq6"]
+
+[ext_resource type="Script" path="res://Script/titlescreen.gd" id="1_u8lfr"]
+[ext_resource type="FontFile" uid="uid://b85f1e3h4hl2q" path="res://Fonts/Retro Gaming.ttf" id="1_yyesp"]
+[ext_resource type="FontFile" uid="uid://bu5hdtbp88ojw" path="res://Fonts/EXEPixelPerfect.ttf" id="2_y0bsr"]
+[ext_resource type="Texture2D" uid="uid://cg180gfaancl0" path="res://Assets/Buttonshowcase.png" id="4_ioxw2"]
+[ext_resource type="Texture2D" uid="uid://c5ynguy5hk02f" path="res://Assets/Grass_Blend_vF.png" id="5_rqpmw"]
+[ext_resource type="Shader" path="res://Scenes/Deepbluewater.gdshader" id="6_x6l34"]
+[ext_resource type="Texture2D" uid="uid://c3eclcaowkgku" path="res://Assets/YCSTA_Oceanlayer01.png" id="7_3vvos"]
+[ext_resource type="Shader" path="res://Scenes/midwater.gdshader" id="8_adrkk"]
+[ext_resource type="Texture2D" uid="uid://bdgasffw74sxs" path="res://Assets/YCSTA_Oceanlayer02.png" id="9_dvkx1"]
+[ext_resource type="Shader" path="res://Scenes/Highwater.gdshader" id="10_wkd7s"]
+[ext_resource type="Texture2D" uid="uid://dte8v2f42bepp" path="res://Assets/YCSTA_Oceanlayer03.png" id="11_tiv2n"]
+[ext_resource type="Texture2D" uid="uid://dcpgqevgemchf" path="res://Assets/SplashArt_LettersOnly.png" id="12_8726h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkyut"]
+atlas = ExtResource("4_ioxw2")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14ay5"]
+atlas = ExtResource("4_ioxw2")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32woi"]
+atlas = ExtResource("4_ioxw2")
+region = Rect2(0, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbecv"]
+atlas = ExtResource("4_ioxw2")
+region = Rect2(64, 32, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qtq6"]
+atlas = ExtResource("4_ioxw2")
+region = Rect2(0, 64, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0mqun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkyut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14ay5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32woi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbecv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qtq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gx6oe"]
+texture = ExtResource("5_rqpmw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kjbq0"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_gx6oe")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u32qm"]
+shader = ExtResource("6_x6l34")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jj1wh"]
+shader = ExtResource("8_adrkk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nuvyx"]
+shader = ExtResource("10_wkd7s")
+
+[node name="Titlescreen" type="Node2D"]
+script = ExtResource("1_u8lfr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 28.0
+offset_top = 12.0
+offset_right = 291.0
+offset_bottom = 73.0
+
+[node name="Highestscore" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_top = 89.0
+offset_right = 320.0
+offset_bottom = 117.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_yyesp")
+theme_override_font_sizes/font_size = 22
+text = "LEVEL 0"
+horizontal_alignment = 1
+
+[node name="Highestscore2" type="Label" parent="."]
+visible = false
+modulate = Color(0.443137, 0.917647, 0.431373, 1)
+texture_filter = 1
+offset_top = 32.0
+offset_right = 320.0
+offset_bottom = 60.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("1_yyesp")
+theme_override_font_sizes/font_size = 22
+text = "THOSE BLESSED FEW"
+horizontal_alignment = 1
+
+[node name="HStext" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 1.0
+offset_top = 78.0
+offset_right = 320.0
+offset_bottom = 101.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_y0bsr")
+text = "HIGHEST SCORE :"
+horizontal_alignment = 1
+
+[node name="HStext2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1.0
+offset_top = 113.0
+offset_right = 320.0
+offset_bottom = 126.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_y0bsr")
+text = "PRESS ONE OF THE 4 BUTTONS TO START"
+horizontal_alignment = 1
+
+[node name="ButtonAnim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(160, 151)
+sprite_frames = SubResource("SpriteFrames_0mqun")
+
+[node name="Tiles" type="Node2D" parent="."]
+z_index = -3
+
+[node name="TileMap01" type="TileMap" parent="Tiles"]
+visible = false
+tile_set = SubResource("TileSet_kjbq0")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 262144, 1, 1, 262144, 1, 2, 262144, 1, 3, 262144, 1, 4, 262144, 0, 5, 65536, 1, 6, 262144, 0, 7, 262144, 1, 8, 262144, 0, 9, 262144, 0, 65545, 262144, 0, 65544, 262144, 1, 65543, 262144, 0, 65542, 65536, 1, 65541, 65536, 1, 65540, 262144, 1, 65539, 262144, 0, 65538, 65536, 1, 65537, 65536, 1, 65536, 262144, 1, 131072, 262144, 0, 131073, 65536, 1, 131074, 262144, 0, 131075, 65536, 1, 131076, 262144, 0, 131077, 262144, 0, 131078, 262144, 0, 131079, 65536, 1, 131080, 262144, 0, 131081, 262144, 1, 196617, 262144, 1, 196616, 262144, 1, 196615, 65536, 1, 196614, 65536, 1, 196613, 262144, 1, 196612, 262144, 0, 196611, 65536, 1, 196610, 262144, 1, 196609, 262144, 0, 196608, 262144, 1, 262144, 262144, 1, 262145, 262144, 0, 262146, 65536, 1, 262147, 65536, 1, 262148, 262144, 0, 262149, 262144, 1, 262150, 65536, 1, 262151, 262144, 1, 262152, 262144, 0, 262153, 262144, 1, 327689, 262144, 1, 327688, 65536, 1, 327687, 262144, 1, 327686, 262144, 0, 327685, 262144, 0, 327684, 262144, 1, 327683, 262144, 1, 327682, 262144, 0, 327681, 262144, 1, 327680, 262144, 1)
+
+[node name="BG" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="Deepblue" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(384, 256)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="BG/Deepblue"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_u32qm")
+texture = ExtResource("7_3vvos")
+centered = false
+
+[node name="Midwater" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(384, 256)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="BG/Midwater"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jj1wh")
+texture = ExtResource("9_dvkx1")
+centered = false
+
+[node name="Highwater" type="ParallaxLayer" parent="BG"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(384, 256)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="BG/Highwater"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_nuvyx")
+texture = ExtResource("11_tiv2n")
+centered = false
+
+[node name="SplashArtCombi" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(162, 52)
+texture = ExtResource("12_8726h")

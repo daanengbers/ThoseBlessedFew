@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://x81ykcq4gjl2"]
+
+[ext_resource type="Texture2D" uid="uid://dq2uhtdjm47ty" path="res://icon.svg" id="1_7a3o5"]
+[ext_resource type="Script" path="res://Scenes/meebling_cage.gd" id="1_do8tn"]
+[ext_resource type="Texture2D" uid="uid://s1lerk08s0ny" path="res://Assets/20healthbar-2.png" id="3_gnpef"]
+[ext_resource type="Texture2D" uid="uid://cptlnq1xtt2a" path="res://Assets/20healthbar-1.png" id="4_kfsuq"]
+[ext_resource type="Texture2D" uid="uid://blqpntbwv062y" path="res://Assets/Cage_Base_v1.png" id="5_l2upf"]
+[ext_resource type="Texture2D" uid="uid://c3yjmncgs34t5" path="res://Assets/Cage_Dome_v1.png" id="6_cdliw"]
+[ext_resource type="Texture2D" uid="uid://dvav5qp6ypv2b" path="res://Assets/YCSTA_Meeblings-Spritesheet.png" id="6_fidun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lohtj"]
+size = Vector2(37, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34pq5"]
+size = Vector2(30, 32)
+
+[node name="MeeblingCage" type="StaticBody2D" groups=["enemy_m"]]
+z_index = 1
+texture_filter = 1
+script = ExtResource("1_do8tn")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_7a3o5")
+
+[node name="HURTbox_Enemy" type="Area2D" parent="."]
+
+[node name="box" type="CollisionShape2D" parent="HURTbox_Enemy"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_lohtj")
+
+[node name="Colbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_34pq5")
+
+[node name="Healthbar" type="TextureProgressBar" parent="."]
+offset_left = -10.0
+offset_top = -23.0
+offset_right = 10.0
+offset_bottom = -22.0
+texture_under = ExtResource("3_gnpef")
+texture_progress = ExtResource("4_kfsuq")
+
+[node name="CageBaseV1" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("5_l2upf")
+
+[node name="c2" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+texture = ExtResource("6_fidun")
+hframes = 3
+vframes = 3
+
+[node name="c3" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("6_cdliw")

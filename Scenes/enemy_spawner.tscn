@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c46w1oefw787c"]
+
+[ext_resource type="Script" path="res://Scenes/enemy_spawner.gd" id="1_g3mno"]
+[ext_resource type="FontFile" uid="uid://bu5hdtbp88ojw" path="res://Fonts/EXEPixelPerfect.ttf" id="3_fg5u1"]
+
+[node name="EnemySpawner" type="Node2D"]
+script = ExtResource("1_g3mno")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 116.0
+offset_top = 6.0
+offset_right = 310.0
+offset_bottom = 19.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_fg5u1")
+text = "Level : 1"
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
