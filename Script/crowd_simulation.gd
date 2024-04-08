@@ -20,6 +20,8 @@ var xp = Globalsettings.global_xp
 var level = 1
 var xpuntilnextlvl = 5
 
+var secconds = 0
+
 var crowdm
 
 var gameover = false
@@ -121,8 +123,10 @@ func level_up():
 	$UI/SelectLevelupscreen.inmenu = true
 	$UI/SelectLevelupscreen.pressed = false
 	get_tree().paused = true
-
-
+	
+func _on_game_timer_timeout():
+	secconds += 1
+	$UI/GameTimerUI.set_text(str(secconds))
 
 
 

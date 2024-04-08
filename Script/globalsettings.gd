@@ -7,7 +7,7 @@ var highscore_xp = 0
 
 var currentrun_extraattack = 0
 var currentrun_extraspeed = 0
-var currentrun_minuscooldown = 0
+var currentrun_minuscooldown = 85
 var currentrun_extrabullets = 0
 var currentrun_extrahealth = 0
 

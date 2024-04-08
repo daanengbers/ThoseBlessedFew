@@ -3,12 +3,12 @@ extends CharacterBody2D
 var EXPORB = preload("res://Scenes/exp_area.tscn")
 var AOE = preload("res://Scenes/enemy_aoe.tscn")
 
-@export var SPEED = 40
+@export var SPEED = 65
 @export var canflip = false
 
 @onready var e_anim = $Icon/Anim
 
-@export var hp = 400
+@export var hp = 1000
 var alive = true
 
 @export var chasing = false

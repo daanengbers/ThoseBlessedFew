@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 var EXPORB = preload("res://Scenes/exp_area.tscn")
 
-@export var SPEED = 20
+@export var SPEED = 40
 @export var canflip = false
 
 @onready var e_anim = $Icon/Anim
 
-@export var hp = 10
+@export var hp = 6
 var alive = true
 
 @export var chasing = false

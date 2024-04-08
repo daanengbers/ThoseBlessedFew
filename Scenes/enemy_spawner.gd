@@ -1,9 +1,11 @@
 extends Node2D
+signal secconds( seccondspassed )
 
 var SKULL = preload("res://Scenes/enemy_member.tscn")
 var EYEBALL = preload("res://Scenes/enemy_Eyeball.tscn")
 
 var cycles = 0
+var seccondspassed = 0
 var biome = 1
 
 var randomenemyspawn = 1
@@ -70,20 +72,38 @@ func _on_spawn_timer_timeout():
 	randomspawnlocy = randi()% 180
 	$SpawnTimer.start()
 	cycles += 1
-	if cycles == 10:
-		$SpawnTimer.wait_time = 3.5
-	if cycles == 20:
+	if seccondspassed == 10:
 		$SpawnTimer.wait_time = 3
-	if cycles == 30:
+	if seccondspassed == 20:
+		$SpawnTimer.wait_time = 2.8
+	if seccondspassed == 30:
 		$SpawnTimer.wait_time = 2.5
-	if cycles == 40:
-		$SpawnTimer.wait_time = 2
-	if cycles == 55:
+	if seccondspassed == 40:
+		$SpawnTimer.wait_time = 2.2
+	if seccondspassed == 60:
 		$SpawnTimer.wait_time = 1.5
-	if cycles == 70:
-		$SpawnTimer.wait_time = 1
+	if seccondspassed == 75:
+		$SpawnTimer.wait_time = 1.6
+	if seccondspassed == 90:
+		$SpawnTimer.wait_time = 1.2
+	if seccondspassed == 105:
+		$SpawnTimer.wait_time = 0.9
+	if seccondspassed == 120:
+		$SpawnTimer.wait_time = 0.7
+	if seccondspassed == 140:
+		$SpawnTimer.wait_time = 0.5
+	if seccondspassed == 200:
+		$SpawnTimer.wait_time = 0.3
+	if seccondspassed == 400:
+		$SpawnTimer.wait_time = 0.2
+	if seccondspassed == 600:
+		$SpawnTimer.wait_time = 0.1
+	if seccondspassed == 900:
+		$SpawnTimer.wait_time = 0.01
 	
+	print(sqrt(cycles))
 	
-	
-	
-	
+
+func _on_seccond_counter_timeout():
+	emit_signal("secconds")
+	seccondspassed += 1

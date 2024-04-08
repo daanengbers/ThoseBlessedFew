@@ -139,9 +139,9 @@ colors = PackedColorArray(0.932716, 0, 0.284699, 1, 0.526026, 0, 0.144998, 1, 1,
 [node name="Enemy_member" type="CharacterBody2D" groups=["enemy_m"]]
 z_index = 1
 script = ExtResource("1_enhsy")
-SPEED = 14
+SPEED = 16
 canflip = true
-hp = 22
+hp = 10
 chasing = true
 
 [node name="Icon" type="Sprite2D" parent="."]
